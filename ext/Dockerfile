@@ -5,7 +5,7 @@ ARG REPO=php-base-img
 
 FROM ghcr.io/${REPO_OWNER}/php/cli:${PHP_VERSION}
 
-LABEL org.opencontainers.image.source="https://github.com/${REPO_OWNER}/${REPO}"
+LABEL org.opencontainers.image.source=https://github.com/${REPO_OWNER}/${REPO}
 
 RUN install-php-extensions ${PHP_EXTENSION} ; \
     # strip debug symbols from extensions to reduce size
