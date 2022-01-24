@@ -161,6 +161,17 @@ jobs:
           username: otel-php-bot
           password: ${{ secrets.BOT_TOKEN }}
 
+      - name: Delete package
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.BOT_TOKEN }}
+          script: |
+            octokit.rest.packages.deletePackageForOrg({
+              container,
+              php/ext-${{ matrix.php-ext }},
+              ${{ github.repository_owner }},
+            });
+
       - name: Build and push ${{ matrix.php-version }}-${{ matrix.php-ext }} to ghcr.io
         uses: docker/build-push-action@v2
         with:
