@@ -6,7 +6,7 @@ ARG REPO=php-base-img
 
 FROM php:${PHP_VERSION}-${PHP_SAPI}-${PHP_OS}
 
-LABEL org.opencontainers.image.source=https://github.com/${REPO_OWNER}/${REPO}
+LABEL org.opencontainers.image.source=https://github.com/opentelemetry-php/php-base-img
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
