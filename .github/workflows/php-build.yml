@@ -168,7 +168,7 @@ jobs:
           script: |
             octokit.rest.packages.deletePackageForOrg({
               container,
-              php/ext-${{ matrix.php-ext }},
+              php%2Fext-${{ matrix.php-ext }},
               ${{ github.repository_owner }},
             });
 
