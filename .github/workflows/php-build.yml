@@ -30,8 +30,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: otel-php-bot
+          password: ${{ secrets.BOT_TOKEN }}
 
       - name: Build and push ${{ matrix.php-version }} to ghcr.io
         uses: docker/build-push-action@v2
